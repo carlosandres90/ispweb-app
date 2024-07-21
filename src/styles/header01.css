@@ -1,0 +1,67 @@
+*{
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+.logo {
+    width: 2rem;
+    vertical-align: middle;
+    padding-left: 50%;
+}
+.dropdownmenu ul {
+    list-style: none; /* Quitar estilos de lista */
+	padding: 0;
+}
+
+.dropdownmenu li {
+	line-height: 3rem;
+	position: relative;
+}
+
+.dropdownmenu li ul {
+	position: absolute;
+}
+
+.dropdownmenu a { 
+	color: #4b4a4a;
+	display: block;
+	padding: 0 2.5em;
+	text-decoration: none;
+	transition: -4s;
+    border: 1px solid white;
+}
+
+.dropdownmenu a:hover { 
+	background: rgba(22, 124, 149, 0.5);
+}
+
+.dropdownmenu li ul{
+   display: none;
+}
+
+.dropdownmenu li:hover > ul{
+   display: block;
+}
+
+.dropdownmenu > ul {
+   background: #dedcdc;
+   display: table;
+   width: 100%;
+   margin: 0;
+}
+
+/*PRIMER NIVEL*/
+.dropdownmenu > ul > li {
+	float: left; /*hace que los elementos se pongan uno junto al otro*/
+    width: 150px;
+}
+
+/*SEGUNDO NIVEL*/
+.dropdownmenu li li {
+	background: #dedcdc;
+	width: 150px;
+}
+
+.dropdownmenu > ul > li > ul {
+	top: 100%;
+}
