@@ -1,0 +1,8 @@
+.contenedor-pantallas {
+    text-align: center;
+    height: 100vh;
+    background-image: url('../assest/Fondo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }

@@ -22,17 +22,17 @@ function Header(){
                             </Link>
                         </li>
                         <li>
-                            <Link to={`/`}>
+                            <Link to={`/clientes-crear`}>
                                 CLIENTES
                             </Link>
                             <ul>
                                 <li>
-                                    <Link to={`/`}>
+                                    <Link to={`/clientes-crear`}>
                                         CREAR
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to={`/`}>
+                                    <Link to={`/clientes-consultar`}>
                                         CONSULTAR
                                     </Link>
                                 </li>
