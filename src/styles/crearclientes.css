@@ -1,55 +1,56 @@
-.form-container {
-    position: absolute;
-    padding: 20px;
-    border-radius: 10px;
-    top: 520px;
-    left: 43%;
-    transform: translate(-49%, -49%);
-    opacity: 0.9;
-    height: 100%;
-    width: 40%;
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  
-  label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    display: inline-block;
-    width: 26%;
-  }
-  
-  input {
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    width: 69%;
-    margin-left: 5px;
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    left: 45%;
-    font-weight: bolder;
-    width: 20%;
-    position: relative;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
+.form-container-CrC {
+  background-color: #ccc7c7;
+  position: absolute;
+  padding: 20px;
+  border-radius: 20px;
+  top: 400px;
+  left: 50%;
+  transform: translate(-49%, -49%);
+  opacity: 0.9;
+  height: 56%;
+  width: 50%;
+  text-align: center;
+}
+
+.form-CrC {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-CrC {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.label-CrC {
+  margin-bottom: 10px;
+  font-weight: bold;
+  display: inline-block;
+  width: 18%;
+}
+
+.input-CrC {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 69%;
+  margin-left: 5px;
+}
+
+.button-CrC {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  left: 45%;
+  font-weight: bolder;
+  width: 20%;
+  position: relative;
+}
+
+.button-CrC:hover {
+  background-color: #45a049;
+}

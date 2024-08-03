@@ -1,0 +1,51 @@
+.container-busqueda-cedula {
+    position: absolute;
+    padding: 10px;
+    border-radius: 20px;
+    top: 210px;
+    left: 65%;
+    opacity: 0.95;
+    
+}
+
+.form-busqueda-cedula {
+    display: flex;
+    background-color: #ccc7c7;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    
+  }
+
+  .form-group-BC {
+    width: 100%;
+  }
+
+  .label-BC {
+    display: inline-block;
+    
+  }
+
+  .input-BC {
+    padding: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    
+  }
+
+  .button-BC {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-BC:hover {
+    background-color: #45a049;
+  }
