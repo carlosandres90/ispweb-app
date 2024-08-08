@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/datosclientes.css';
 
-function DatosClientes(){
+function DatosClientesActualizar(){
     return (
         <div class="form-container-CnC">
             <h2>DATOS DEL CLIENTE</h2>
@@ -20,15 +20,15 @@ function DatosClientes(){
                 </div>
                 <div class="form-group-CnC">
                     <label class="label-CnC" for="direccion">DIRECCIÓN:</label>
-                    <input class="input-CnC" type="text" id="direccion" name="direccion" required />
+                    <input class="input-CnC" type="text" id="direccion" name="direccion" required disabled/>
                 </div>
                 <div class="form-group-CnC">
                     <label class="label-CnC" for="telefono">TELÉFONO:</label>
-                    <input class="input-CnC" type="tel" id="telefono" name="telefono" required />
+                    <input class="input-CnC" type="tel" id="telefono" name="telefono" required/>
                 </div>
             </form>
         </div>
     );
 }
 
-export default DatosClientes;
+export default DatosClientesActualizar;

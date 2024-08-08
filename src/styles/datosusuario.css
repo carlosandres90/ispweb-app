@@ -1,0 +1,93 @@
+.form-container-DU {
+    background-color: #dedcdc;
+    position: absolute;
+    padding: 10px;
+    border-radius: 20px;
+    top: 290px;
+    left: 65%;
+    opacity: 0.9;
+    height: 48%;
+    width: 28%;
+    text-align: center;
+  }
+  
+  .form-DU {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group-DU {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .label-DU {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 21%;
+  }
+  
+  .input-DU {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 70%;
+    margin-left: 5px;
+  }
+
+  .select-DU {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 25%;
+    margin-left: 5px;
+  }
+
+  .select-estado-DU {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 71%;
+    margin-left: 5px;
+  }
+
+  .label-Precio-DU {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 21%;
+  }
+
+  .input-dir-DU {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 70%;
+    height: 70px;
+    margin-left: 5px;
+  }
+
+  .input-Precio-DU {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 20%;
+    margin-left: 5px;
+  }
+
+  .button-DU {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    left: 45%;
+    font-weight: bolder;
+    width: 24%;
+    position: relative;
+  }
+  
+  .button-DU:hover {
+    background-color: #45a049;
+  }

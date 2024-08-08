@@ -4,7 +4,6 @@ import '../styles/crearclientes.css';
 function CrearClientes(){
     return (
         <div class="form-container-CrC">
-            <h1>CREACIÓN DE CLIENTES</h1>
             <form class="form-CrC">
                 <div class="form-group-CrC">
                     <label class="label-CrC" for="apellidos">APELLIDOS:</label>

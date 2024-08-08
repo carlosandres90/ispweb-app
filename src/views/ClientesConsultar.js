@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContenedorPantalla from '../components/ContenedorPantallas';
 import DatosClientes from '../components/DatosClientes';
-import Titulo from '../components/TituloPantallas';
+import TituloCnC from '../components/TituloCnC';
 import BusquedaCedula from '../components/BusquedaCedula';
 
 
@@ -12,7 +12,7 @@ export const ClientesConsultar = () =>{
         <div className='clientes-consultar'>
             <Header />
             <ContenedorPantalla />
-            <Titulo />
+            <TituloCnC />
             <DatosClientes />
             <BusquedaCedula />
             <Footer />

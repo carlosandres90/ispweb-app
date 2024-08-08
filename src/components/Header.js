@@ -1,10 +1,12 @@
 import React from 'react';
 import Logo from '../assest/logo.png';
 import '../styles/header01.css'
-
 import { Link } from "react-router-dom";
 
-function Header(){
+
+
+const Header = () => {
+
     return (
         <header className='headers'>
             <div className='headers_header'>
@@ -22,7 +24,7 @@ function Header(){
                             </Link>
                         </li>
                         <li>
-                            <Link to={`/clientes-crear`}>
+                            <Link to={`/clientes-crear`} >
                                 CLIENTES
                             </Link>
                             <ul>
@@ -39,17 +41,17 @@ function Header(){
                             </ul>
                         </li>
                         <li>
-                            <Link to={`/`}>
+                            <Link to={`/usuarios-crear`}>
                                 USUARIOS
                             </Link>
                             <ul>
                                 <li>
-                                    <Link to={`/`}>
+                                    <Link to={`/usuarios-crear`}>
                                         CREAR
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to={`/`}>
+                                    <Link to={`/usuarios-actualizar`}>
                                         ACTUALIZAR
                                     </Link>
                                 </li>
@@ -68,18 +70,6 @@ function Header(){
                                 <li>
                                     <Link to={`/`}>
                                         CONSULTAR
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <Link to={`/`}>
-                                REPORTES
-                            </Link>
-                            <ul>
-                                <li>
-                                    <Link to={`/`}>
-                                        POR MES
                                     </Link>
                                 </li>
                             </ul>

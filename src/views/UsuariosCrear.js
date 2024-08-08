@@ -2,19 +2,22 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContenedorPantalla from '../components/ContenedorPantallas';
-import DatosClientes from '../components/DatosClientes';
-import Titulo from '../components/TituloPantallas';
 import BusquedaCedula from '../components/BusquedaCedula';
+import TituloCrU from '../components/TituloCrU';
+import DatosClientesUsuario from '../components/DatosClientesUsuario';
+import DatosUsuario from '../components/DatosUsuario';
 
 
-export const ClientesConsultar = () =>{
+export const UsuariosCrear = () =>{
+
     return(
         <div className='clientes-consultar'>
             <Header />
             <ContenedorPantalla />
-            <Titulo />
-            <DatosClientes />
+            <TituloCrU />
+            <DatosClientesUsuario />
             <BusquedaCedula />
+            <DatosUsuario />
             <Footer />
         </div>
     );

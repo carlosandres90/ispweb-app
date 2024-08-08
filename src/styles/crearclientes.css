@@ -1,5 +1,5 @@
 .form-container-CrC {
-  background-color: #ccc7c7;
+  background-color: #dedcdc;
   position: absolute;
   padding: 20px;
   border-radius: 20px;
@@ -7,8 +7,8 @@
   left: 50%;
   transform: translate(-49%, -49%);
   opacity: 0.9;
-  height: 56%;
-  width: 50%;
+  height: 45%;
+  width: 45%;
   text-align: center;
 }
 
