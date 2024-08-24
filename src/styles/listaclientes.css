@@ -1,0 +1,12 @@
+.lista-clientes {
+    background-color: #dedcdc;
+    position: absolute;
+    padding: 10px;
+    border-radius: 20px;
+    top: 290px;
+    left: 65%;
+    opacity: 0.9;
+    height: 48%;
+    width: 28%;
+    text-align: center;
+  }

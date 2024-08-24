@@ -35,3 +35,28 @@
     width: 70%;
     margin-left: 5px;
   }
+
+  .button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+  .button-CnC {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+    font-weight: bolder;
+      
+    position: relative;
+  }
+  
+  .button-CnC:hover {
+    background-color: #45a049;
+  }

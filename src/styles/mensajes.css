@@ -1,0 +1,15 @@
+.mensaje-error {
+    background-color: #dedcdc;
+    padding: 10px;
+    border-radius: 15px;
+    top: 70px;
+    left: 1%;
+    opacity: 0.95;
+    height: 40%;
+    width: 92%;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    letter-spacing: 0.2em;
+    text-align: center;
+}

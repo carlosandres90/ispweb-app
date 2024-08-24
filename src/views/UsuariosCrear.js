@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContenedorPantalla from '../components/ContenedorPantallas';
@@ -10,14 +10,17 @@ import DatosUsuario from '../components/DatosUsuario';
 
 export const UsuariosCrear = () =>{
 
+    const [selectedClient, setSelectedClient] = useState(null);
+
     return(
         <div className='clientes-consultar'>
             <Header />
             <ContenedorPantalla />
             <TituloCrU />
-            <DatosClientesUsuario />
-            <BusquedaCedula />
-            <DatosUsuario />
+            <BusquedaCedula setSelectedClient={setSelectedClient}/>
+            {selectedClient && <DatosClientesUsuario cliente={selectedClient} />}
+            {selectedClient && <DatosUsuario cliente={selectedClient} />}
+            
             <Footer />
         </div>
     );
