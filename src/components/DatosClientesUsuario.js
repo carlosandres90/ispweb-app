@@ -33,7 +33,7 @@ const DatosClientesUsuario = ({ cliente }) => {
                 </div>
                 <div class="form-group-CnC">
                     <label class="label-CnC" for="telefono">TELÉFONO:</label>
-                    <input class="input-CnC" type="tel" id="telefono" name="telefono" value={cliente.telefono} required disabled/>
+                    <input class="input-CnC" type="tel" id="telefono" name="telefono" value={cliente.numeroTelefono} required disabled/>
                 </div>
             </form>
         </div>

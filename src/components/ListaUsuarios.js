@@ -1,15 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/listausuarios.css';
 
-const ListaUsuarios = () => {
-  const [usuarios, setUsuarios] = useState([]);
+const ListaUsuarios =  ({ cliente }) => {
+    
+    const[usuarios, setUsuarios] = useState([]);
+    
+    
 
-  useEffect(() => {
-    fetch("http://localhost:3001/usuarios")
-      .then((response) => response.json())
-      .then((data) => setUsuarios(data))
-      .catch((error) => console.error('Error fetching clientes:', error));
-  }, []);
+
+    useEffect(() => {
+        const fetchUsuarios = async () => {
+            if (!cliente.cedula) {
+                setUsuarios([]); // Si no hay cédula, limpia la tabla
+                return;
+            }
+
+            
+            
+
+            try {
+                const response = await fetch('http://localhost:3001/usuarios/buscar', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ cedula: cliente.cedula }), // Envía la cédula en el cuerpo de la solicitud
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud');
+                }
+
+                const data = await response.json();
+                setUsuarios(data); // Actualiza la lista de usuarios con los datos obtenidos
+            } catch (err) {
+                console.log('Error al buscar los usuarios. Inténtalo de nuevo.')
+
+            } finally {
+                
+                
+            }
+        };
+
+        fetchUsuarios();
+    }, [cliente.cedula]); // Ejecuta la búsqueda cada vez que la cédula cambie
+
+
+    
 
   return (
     <div class='lista-clientes scroll-container'>

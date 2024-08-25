@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../styles/datosclientes.css';
 
 const DatosClientes = ({ cliente }) => {
     
-    const [direccion, setDireccion] = useState(cliente.direccion);
-    const [telefono, setTelefono] = useState(cliente.telefono);
+    const [direccion, setDireccion] = useState('');
+    const [numeroTelefono, setnumeroTelefono] = useState('');
     const [mensaje, setMensaje] = useState('');
+
+    useEffect(() => {
+        if (cliente) {
+            setDireccion(cliente.direccion);
+            setnumeroTelefono(cliente.numeroTelefono);
+        }
+    }, [cliente]);
 
     const handleUpdate = async (e) => {
         e.preventDefault();
@@ -16,7 +23,7 @@ const DatosClientes = ({ cliente }) => {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ direccion, telefono }),
+            body: JSON.stringify({ direccion, numeroTelefono }),
           });
     
           if (!response.ok) {
@@ -32,13 +39,7 @@ const DatosClientes = ({ cliente }) => {
         }
       };
 
-    if(!cliente){
-        return (
-            <div class="form-container-CnC">
-            <h2> Debe ingresar una cedula </h2>
-        </div>
-        );
-    }
+    
         return (
             <div class="form-container-CnC">
                 <h2> DATOS CLIENTE </h2>
@@ -98,7 +99,8 @@ const DatosClientes = ({ cliente }) => {
                             type="tel" 
                             id="telefono" 
                             name="telefono" 
-                            value={telefono} onChange={(e) => setTelefono(e.target.value)} 
+                            value={numeroTelefono} 
+                            onChange={(e) => setnumeroTelefono(e.target.value)} 
                             required 
                         />
                     </div>

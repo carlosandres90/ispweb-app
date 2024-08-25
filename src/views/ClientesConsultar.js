@@ -19,7 +19,7 @@ export const ClientesConsultar = () =>{
             <TituloCnC />
             <BusquedaCedula setSelectedClient={setSelectedClient}/>
             {selectedClient && <DatosClientes cliente={selectedClient} />}
-            <ListaUsuarios />
+            {selectedClient && <ListaUsuarios cliente={selectedClient} />}
             <Footer />
         </div>
     );

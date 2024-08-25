@@ -1,0 +1,66 @@
+.form-container-PCV {
+    background-color: #dedcdc;
+    position: absolute;
+    padding: 10px;
+    border-radius: 20px;
+    top: 290px;
+    left: 65%;
+    opacity: 0.9;
+    height: 28%;
+    width: 28%;
+    text-align: center;
+  }
+  
+  .form-PCV {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group-PCV {
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  
+  .label-PCV {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 21%;
+  }
+  
+  .input-PCV {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 70%;
+    margin-left: 5px;
+  }
+ 
+  .label-Precio-PCV {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 21%;
+  }
+
+  .input-Precio-PCV {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 60%;
+    height: 15px;
+    margin-left: 5px;
+  }
+
+  .label-Plan-PCV {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 21%;
+  }
+
+  .input-Plan-PCV {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 60%;
+    height: 15px;
+    margin-left: 5px;
+  }

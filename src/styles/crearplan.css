@@ -1,0 +1,64 @@
+.form-container-CrP {
+    background-color: #dedcdc;
+    position: absolute;
+    padding: 20px;
+    border-radius: 20px;
+    top: 400px;
+    left: 50%;
+    transform: translate(-49%, -49%);
+    opacity: 0.9;
+    height: 33%;
+    width: 45%;
+    text-align: center;
+  }
+  
+  .form-CrP {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group-CrP {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .label-CrP {
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: 22%;
+  }
+  
+  .select-estado-CrP {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 72%;
+    margin-left: 5px;
+  }
+
+  .input-CrP {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 69%;
+    margin-left: 5px;
+  }
+  
+  .button-CrP {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    left: 45%;
+    font-weight: bolder;
+    width: 20%;
+    position: relative;
+  }
+  
+  .button-CrP:hover {
+    background-color: #45a049;
+  }

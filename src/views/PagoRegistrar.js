@@ -2,24 +2,22 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContenedorPantalla from '../components/ContenedorPantallas';
-import TituloAcU from '../components/TituloAcU';
 import BusquedaUsuario from '../components/BusquedaUsuario';
-import PlanContratado from '../components/PlanContratado';
-import DatosClientesActualizar from '../components/DatosClientesActualizar';
 
+import RegistrarPago from '../components/RegistrarPago';
+import TituloRp from '../components/TituloRp';
 
-export const UsuariosActualizar = () =>{
+export const PagoRegistrar = () =>{
 
     const [selectedUser, setSelectedUser] = useState(null);
 
     return(
-        <div className='clientes-consultar'>
+        <div className='pago-registrar'>
             <Header />
             <ContenedorPantalla />
-            <TituloAcU />
+            <TituloRp />
             <BusquedaUsuario setSelectedUser={setSelectedUser}/>
-            {selectedUser && <DatosClientesActualizar usuario={selectedUser} />}
-            {selectedUser && <PlanContratado usuario={selectedUser} />}
+            {selectedUser && <RegistrarPago usuario={selectedUser} />}
             <Footer />
         </div>
     );

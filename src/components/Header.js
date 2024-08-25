@@ -58,12 +58,12 @@ const Header = () => {
                             </ul>
                         </li> 
                         <li>
-                            <Link to={`/`}>
+                            <Link to={`/pago-registrar`}>
                                 PAGOS
                             </Link>
                             <ul>
                                 <li>
-                                    <Link to={`/`}>
+                                    <Link to={`/pago-registrar`}>
                                         REGISTRAR
                                     </Link>
                                 </li>
@@ -75,12 +75,12 @@ const Header = () => {
                             </ul>
                         </li> 
                         <li>
-                            <Link to={`/`}>
+                            <Link to={`/plan-crear`}>
                                 PLAN
                             </Link>
                             <ul>
                                 <li>
-                                    <Link to={`/`}>
+                                    <Link to={`/plan-crear`}>
                                         CREAR
                                     </Link>
                                 </li>

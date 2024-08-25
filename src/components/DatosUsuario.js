@@ -7,7 +7,7 @@ function DatosUsuario({ cliente }){
     const [plan, setPlan] = useState('');
     const [precio, setPrecio] = useState('');
     const [direccion, setDireccion] = useState('');
-    const [cedula, setCedula] = useState(cliente.cedula);
+    const [setCedula] = useState(cliente.cedula);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +17,7 @@ function DatosUsuario({ cliente }){
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ codigo, plan, precio, direccion, cedula }),
+            body: JSON.stringify({ codigo, plan, precio, direccion, cedula: cliente.cedula }),
           })
         .then(response => response.json())
         .then(data => {

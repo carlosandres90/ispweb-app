@@ -1,0 +1,56 @@
+.form-container-Rp {
+    background-color: #dedcdc;
+    position: absolute;
+    padding: 20px;
+    border-radius: 20px;
+    top: 400px;
+    left: 30%;
+    transform: translate(-49%, -49%);
+    opacity: 0.9;
+    height: 45%;
+    width: 45%;
+    text-align: center;
+  }
+  
+  .form-Rp {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group-Rp {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .label-Rp {
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: inline-block;
+    width: 18%;
+  }
+  
+  .input-Rp {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 69%;
+    margin-left: 5px;
+  }
+  
+  .button-Rp {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    left: 45%;
+    font-weight: bolder;
+    width: 20%;
+    position: relative;
+  }
+  
+  .button-Rp:hover {
+    background-color: #45a049;
+  }

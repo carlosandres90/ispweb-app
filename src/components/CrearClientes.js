@@ -6,18 +6,29 @@ function CrearClientes(){
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [direccion, setDireccion] = useState('');
-    const [telefono, setTelefono] = useState('');
+    const [numeroTelefono, setnumeroTelefono] = useState('');
     const [mensaje, setMensaje] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3001/clientes', {
+        const data = {
+            targetMethod: "POST",
+            body: {
+              cedula: cedula,
+              apellido: apellido,
+              nombre: nombre,
+              numeroTelefono: numeroTelefono,
+              direccion: direccion
+            }
+          };
+
+        fetch('http://3.142.35.243:8762/ms-clientes/clientes', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ cedula, nombre, apellido, direccion, telefono }),
+            body: JSON.stringify(data),
           })
         .then(response => response.json())
         .then(data => {
@@ -27,7 +38,7 @@ function CrearClientes(){
             setNombre('');
             setApellido('');
             setDireccion('');
-            setTelefono('');
+            setnumeroTelefono('');
         })
       .catch(error => console.error('Error agregando cliente:', error));
     };
@@ -90,8 +101,8 @@ function CrearClientes(){
                         type="tel"
                         id="telefono" 
                         name="telefono" 
-                        value={telefono} 
-                        onChange={(e) => setTelefono(e.target.value)}
+                        value={numeroTelefono} 
+                        onChange={(e) => setnumeroTelefono(e.target.value)}
                         required />
                 </div>
                 <button class="button-CrC" type="submit">INGRESAR</button>

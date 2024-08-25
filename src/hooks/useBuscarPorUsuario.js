@@ -1,38 +1,38 @@
 import { useState } from 'react';
 
-export const useBuscarPorCedula = () => {
-  const [cliente, setCliente] = useState(null);
+export const useBuscarPorUsuario = () => {
+  const [usuario, setUsuario] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const buscarClientePorCedula = async (cedula) => {
+  const buscarUsuarioPorCodigo = async (codigo) => {
     setLoading(true);
     setError(null);
+
     try {
-        
-      const response = await fetch(`http://3.142.35.243:8762/ms-clientes/clientes/${cedula}`, {
+      const response = await fetch('http://localhost:3001/usuarios/buscarCodigo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({targetMethod: "GET"}),
+        body: JSON.stringify({ codigo }),
       });
 
+      
       if (!response.ok) {
-        throw new Error('CLIENTE NO ENCONTRADO');
+        throw new Error('USUARIO NO ENCONTRADO');
       }
 
       const data = await response.json();
-      setCliente(data);
+      setUsuario(data);
       return data;
     } catch (error) {
       setError(error.message);
-      setCliente(null);
+      setUsuario(null);
     } finally {
       setLoading(false);
     }
   };
 
-  return { cliente, loading, error, buscarClientePorCedula };
+  return { usuario, loading, error, buscarUsuarioPorCodigo };
 };
-
