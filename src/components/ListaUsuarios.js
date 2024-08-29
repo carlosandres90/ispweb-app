@@ -16,15 +16,18 @@ const ListaUsuarios =  ({ cliente }) => {
             }
 
             
-            
+    
 
             try {
-                const response = await fetch('http://localhost:3001/usuarios/buscar', {
+                const data1 = {
+                    targetMethod: "GET",
+                };
+                const response = await fetch(`http://3.142.35.243:8762/ms-usuarios/usuarios/cliente/${cliente.cedula}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ cedula: cliente.cedula }), // Envía la cédula en el cuerpo de la solicitud
+                    body: JSON.stringify(data1), // Envía la cédula en el cuerpo de la solicitud
                 });
 
                 if (!response.ok) {
@@ -64,10 +67,10 @@ const ListaUsuarios =  ({ cliente }) => {
             {usuarios.map(usuario => (
                 <tr key={usuario.id} >
                     <td class="adjust-to-text">{usuario.codigo}</td>
-                    <td class="adjust-to-text">{usuario.plan}</td>
-                    <td class="adjust-to-text">{usuario.precio}</td>
-                    <td>{usuario.direccion}</td>
-                    <td class="adjust-to-text">{usuario.cedula}</td>
+                    <td class="adjust-to-text">{usuario.idPlan}</td>
+                    <td class="adjust-to-text">{usuario.fechaCreacion}</td>
+                    <td>{usuario.cedula}</td>
+                    <td class="adjust-to-text">{usuario.estado}</td>
                 </tr>
             ))}
             </tbody>

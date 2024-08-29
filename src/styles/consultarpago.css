@@ -1,0 +1,63 @@
+.lista-pagos {
+    background-color: #dedcdc;
+    position: absolute;
+    padding: 15px;
+    top: 300px;
+    width: 80%;
+    opacity: 0.9;
+    text-align:center;
+    border-radius: 20px;
+    left: 11%;
+}
+.adjust-to-text {
+    white-space: nowrap;
+    width: 1%;
+}
+.scroll-container {
+    height: 330px; /* Altura fija */
+    border: 1px solid #dedcdc;
+    overflow-y: auto; /* Barra de desplazamiento cuando el contenido excede el tamaño */
+}
+.tabla-pagos {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tabla-pagos th, td {
+    padding: 10px;
+    border: 1.5px solid black;
+    text-align: center;
+}
+.tabla-pagos th {
+    background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Asegura que la cabecera esté por encima del contenido */
+}
+.tabla-pagos tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+/* Opcional: para agregar un efecto de sombra a la cabecera fija */
+.tabla-pagos th::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}    
+/* Estilos para la barra de scroll transparente */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Color de la barra de scroll */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Fondo transparente */
+}

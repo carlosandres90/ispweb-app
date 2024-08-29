@@ -68,7 +68,7 @@ const Header = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to={`/`}>
+                                    <Link to={`/pago-consultar`}>
                                         CONSULTAR
                                     </Link>
                                 </li>

@@ -74,7 +74,7 @@ function CrearClientes(){
                     <label class="label-CrC" for="cedula">CÉDULA:</label>
                     <input 
                         class="input-CrC" 
-                        type="text" 
+                        type="number" 
                         id="cedula" 
                         name="cedula"
                         value={cedula} 

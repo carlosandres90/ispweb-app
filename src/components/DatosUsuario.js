@@ -1,44 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../styles/datosusuario.css';
 
-function DatosUsuario({ cliente }){
-
+function DatosUsuario({ cliente }) {
     const [codigo, setCodigo] = useState('');
     const [plan, setPlan] = useState('');
     const [precio, setPrecio] = useState('');
     const [direccion, setDireccion] = useState('');
+    const [planes, setPlanes] = useState([]); // Estado para almacenar los planes obtenidos
     const [setCedula] = useState(cliente.cedula);
+
+    useEffect(() => {
+        // Función para obtener los planes de la API
+        const obtenerPlanes = async () => {
+            try {
+                const response = await fetch('http://192.168.100.141:3001/planes');
+                const data = await response.json();
+                setPlanes(data); // Almacenar los planes en el estado
+            } catch (error) {
+                console.error('Error obteniendo los planes:', error);
+            }
+        };
+
+        obtenerPlanes(); // Llamar a la función para obtener los planes al montar el componente
+    }, []);
+
+    // Maneja el cambio en el select de plan y actualiza el estado de plan y precio
+    const handlePlanChange = (e) => {
+        const selectedPlan = planes.find(p => p.anchobanda === e.target.value);
+        setPlan(selectedPlan.anchobanda);
+        setPrecio(selectedPlan.precio); // Ajustar el estado del precio basado en el plan seleccionado
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3001/usuarios', {
+        fetch('http://192.168.100.141:3001/usuarios', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({ codigo, plan, precio, direccion, cedula: cliente.cedula }),
-          })
+        })
         .then(response => response.json())
         .then(data => {
-        console.log('Usuario agregado:', data);
-        setCodigo('');
-        setPlan('');
-        setPrecio('');
-        setDireccion('');
-        setCedula(cliente.cedula);
-      })
-      .catch(error => console.error('Error agregando usuario:', error));
+            console.log('Usuario agregado:', data);
+            setCodigo('');
+            setPlan('');
+            setPrecio('');
+            setDireccion('');
+            setCedula(cliente.cedula);
+        })
+        .catch(error => console.error('Error agregando usuario:', error));
     };
-    
+
     return (
-        <div class="form-container-DU">
+        <div className="form-container-DU">
             <h2>DATOS DEL USUARIO</h2>
-            <form class="form-DU" onSubmit={handleSubmit}>
-                <div class="form-group-DU">
-                    <label class="label-DU" for="codigo">CODIGO:</label>
+            <form className="form-DU" onSubmit={handleSubmit}>
+                <div className="form-group-DU">
+                    <label className="label-DU" htmlFor="codigo">CODIGO:</label>
                     <input 
-                        class="input-DU" 
+                        className="input-DU" 
                         type="text" 
                         id="codigo" 
                         name="codigo"
@@ -47,17 +69,26 @@ function DatosUsuario({ cliente }){
                         required
                     />
                 </div>
-                <div class="form-group-DU">
-                    <label class="label-DU" for="plan">PLAN:</label>
-                    <select class="select-DU" id="options" name="options" value={plan} onChange={(e) => setPlan(e.target.value)}>
-                        <option value="20M" selected>20 Mbps</option>
-                        <option value="30M">30 Mbps</option>
-                        <option value="40M">40 Mbps</option>
-                        <option value="50M">50 Mbps</option>
+                <div className="form-group-DU">
+                    <label className="label-DU" htmlFor="plan">PLAN:</label>
+                    <select 
+                        className="select-DU" 
+                        id="plan" 
+                        name="plan" 
+                        value={plan} 
+                        onChange={handlePlanChange} 
+                        required
+                    >
+                        <option value="">Selecciona un plan...</option>
+                        {planes.map((planItem) => (
+                            <option key={planItem.id} value={planItem.anchobanda}>
+                                {planItem.anchobanda}
+                            </option>
+                        ))}
                     </select>
-                    <label class="label-Precio-DU" for="precio">PRECIO:</label>
+                    <label className="label-Precio-DU" htmlFor="precio">PRECIO:</label>
                     <input 
-                        class="input-Precio-DU" 
+                        className="input-Precio-DU" 
                         type="text" 
                         id="precio" 
                         name="precio" 
@@ -66,10 +97,10 @@ function DatosUsuario({ cliente }){
                         required
                     />
                 </div>
-                <div class="form-group-DU">
-                    <label class="label-DU" for="direccion">DIRECCIÓN:</label>
+                <div className="form-group-DU">
+                    <label className="label-DU" htmlFor="direccion">DIRECCIÓN:</label>
                     <input 
-                        class="input-dir-DU" 
+                        className="input-dir-DU" 
                         type="text" 
                         id="direccion" 
                         name="direccion" 
@@ -78,7 +109,7 @@ function DatosUsuario({ cliente }){
                         required
                     />
                 </div>
-                <button class="button-DU" type="submit">INGRESAR</button>
+                <button className="button-DU" type="submit">INGRESAR</button>
             </form>
         </div>
     );
