@@ -8,6 +8,7 @@ import { UsuariosActualizar } from "../views/UsuariosActualizar";
 import { PlanCrear } from "../views/PlanCrear";
 import { PagoRegistrar } from "../views/PagoRegistrar";
 import { PagosConsultar } from "../views/PagosConsultar";
+import { PlanActualizar } from "../views/PlanActualizar";
 
 export const AppRoutes = () => {
     return(
@@ -21,6 +22,7 @@ export const AppRoutes = () => {
                 <Route path="/plan-crear" element={<PlanCrear />}/>
                 <Route path="/pago-registrar" element={<PagoRegistrar/>}/>
                 <Route path="/pago-consultar" element={<PagosConsultar/>}/>
+                <Route path="/plan-actualizar" element={<PlanActualizar/>}/>
             </Routes>
         </BrowserRouter>
     );

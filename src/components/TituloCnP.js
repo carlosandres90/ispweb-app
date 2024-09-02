@@ -4,7 +4,7 @@ import '../styles/titulopantallas.css';
 function TituloCnP(){
     return (
         <div className="titulo">
-            <p className="titulo_centrar">CONSULTA DE PAGOS</p>
+            <p className="titulo_centrar">CONSULTAR PAGOS</p>
         </div>
     );
 }

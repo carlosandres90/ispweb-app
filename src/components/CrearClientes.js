@@ -9,17 +9,72 @@ function CrearClientes(){
     const [numeroTelefono, setnumeroTelefono] = useState('');
     const [mensaje, setMensaje] = useState('');
 
+    const validarEntrada = () => {
+        let errores = [];
+
+        if (nombre.trim() !== nombre) {
+            errores.push("El nombre no debe tener espacios al inicio o al final.");
+        }
+        if (apellido.trim() !== apellido) {
+            errores.push("El apellido no debe tener espacios al inicio o al final.");
+        }
+        if (direccion.trim() !== direccion) {
+            errores.push("La dirección no debe tener espacios al inicio o al final.");
+        }
+        if (numeroTelefono.trim() !== numeroTelefono) {
+            errores.push("El número de teléfono no debe tener espacios al inicio o al final.");
+        }
+
+        // Validar cédula (solo números, longitud mínima de 10 caracteres)
+        if (!/^\d{10}$/.test(cedula)) {
+            errores.push("La cédula debe contener exactamente 10 dígitos.");
+        }
+
+        // Validar nombre y apellido (solo letras y espacios)
+        if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
+            errores.push("El nombre solo debe contener letras y espacios.");
+        }
+        if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(apellido)) {
+            errores.push("El apellido solo debe contener letras y espacios.");
+        }
+
+        // Validar dirección (sin caracteres especiales peligrosos)
+        if (!/^[a-zA-Z0-9\s,.\-áéíóúÁÉÍÓÚñÑ]+$/.test(direccion)) { 
+            errores.push("La dirección contiene caracteres inválidos.");
+        }
+
+        // Validar número de teléfono (solo números)
+        if (!/^\d+$/.test(numeroTelefono)) {
+            errores.push("El número de teléfono solo debe contener números.");
+        }
+
+        if (errores.length > 0) {
+            alert("Errores en el formulario:\n" + errores.join("\n"));
+        }
+
+        return errores.length === 0;
+    };
+
+    const limpiarEntrada = (str) => {
+        return str.replace(/[<>{}]/g, ""); // Elimina caracteres potencialmente peligrosos
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!validarEntrada()) {
+            setMensaje("Por favor, corrige los errores antes de enviar.");
+            return;
+        }
 
         const data = {
             targetMethod: "POST",
             body: {
-              cedula: cedula,
-              apellido: apellido,
-              nombre: nombre,
-              numeroTelefono: numeroTelefono,
-              direccion: direccion
+                cedula: limpiarEntrada(cedula),
+                apellido: limpiarEntrada(apellido),
+                nombre: limpiarEntrada(nombre),
+                numeroTelefono: limpiarEntrada(numeroTelefono),
+                direccion: limpiarEntrada(direccion)
             }
           };
 

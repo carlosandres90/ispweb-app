@@ -1,12 +1,12 @@
 import React from "react";
 import '../styles/titulopantallas.css';
 
-function TituloRp(){
+function TituloAcPl(){
     return (
         <div className="titulo">
-            <p className="titulo_centrar">REGISTRAR PAGO</p>
+            <p className="titulo_centrar">ACTUALIZAR PLAN</p>
         </div>
     );
 }
 
-export default TituloRp;
+export default TituloAcPl;

@@ -67,9 +67,9 @@ const ListaUsuarios =  ({ cliente }) => {
             {usuarios.map(usuario => (
                 <tr key={usuario.id} >
                     <td class="adjust-to-text">{usuario.codigo}</td>
-                    <td class="adjust-to-text">{usuario.idPlan}</td>
-                    <td class="adjust-to-text">{usuario.fechaCreacion}</td>
-                    <td>{usuario.cedula}</td>
+                    <td class="adjust-to-text">{usuario.anchoBanda}</td>
+                    <td class="adjust-to-text">{usuario.precio}</td>
+                    <td>{usuario.direccion}</td>
                     <td class="adjust-to-text">{usuario.estado}</td>
                 </tr>
             ))}

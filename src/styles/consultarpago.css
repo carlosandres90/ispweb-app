@@ -61,3 +61,17 @@
 ::-webkit-scrollbar-track {
     background-color: transparent; /* Fondo transparente */
 }
+
+.button-act-pago{
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bolder;
+    width: 30%;
+    position: relative;
+    margin-top: 10px;
+}

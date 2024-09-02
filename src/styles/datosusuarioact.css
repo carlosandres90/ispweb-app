@@ -1,93 +1,99 @@
 .form-container-DUA {
-    background-color: #dedcdc;
-    position: absolute;
-    padding: 10px;
-    border-radius: 20px;
-    top: 290px;
-    left: 65%;
-    opacity: 0.9;
-    height: 48%;
-    width: 28%;
-    text-align: center;
-  }
-  
-  .form-DUA {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group-DUA {
-    margin-bottom: 5px;
-    width: 100%;
-  }
-  
-  .label-DUA {
-    margin-bottom: 10px;
-    display: inline-block;
-    width: 21%;
-  }
-  
-  .input-DUA {
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    width: 70%;
-    margin-left: 5px;
-  }
+  background-color: #dedcdc;
+  position: absolute;
+  padding: 10px;
+  border-radius: 20px;
+  top: 290px;
+  left: 65%;
+  opacity: 0.9;
+  height: 35%;
+  width: 28%;
+  text-align: center;
+}
 
-  .select-DUA {
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    width: 25%;
-    margin-left: 5px;
-  }
+.form-DUA {
+  display: flex;
+  flex-direction: column;
+}
 
-  .select-estado-DUA {
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    width: 75%;
-    margin-left: 5px;
-  }
+.form-group-DUA {
+  margin-bottom: 15px;
+  width: 100%;
+}
 
-  .label-Precio-DUA {
-    margin-bottom: 10px;
-    display: inline-block;
-    width: 21%;
-  }
+.label-DUA {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 21%;
+}
 
-  .input-dir-DUA {
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    width: 70%;
-    height: 40px;
-    margin-left: 5px;
-  }
+.input-DUA {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 70%;
+  margin-left: 5px;
+}
 
-  .input-Precio-DUA {
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    width: 20%;
-    margin-left: 5px;
-  }
+.select-DUA {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 25%;
+  margin-left: 5px;
+}
 
-  .button-act-DUA {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    left: 43%;
-    font-weight: bolder;
-    width: 30%;
-    position: relative;
-  }
-  
-  .button-act-DUA:hover {
-    background-color: #45a049;
-  }
+.select-estado-DUA {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 75%;
+  margin-left: 5px;
+}
+
+.label-Precio-DUA {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 21%;
+}
+
+.input-dir-DUA {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 70%;
+  height: 40px;
+  margin-left: 5px;
+}
+
+.input-Precio-DUA {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 20%;
+  margin-left: 5px;
+}
+
+.button-act-DUA {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  left: 43%;
+  font-weight: bolder;
+  width: 30%;
+  position: relative;
+}
+
+.button-act-DUA:hover {
+  background-color: #45a049;
+}
+
+.error-DUA{
+  margin: 0;
+  padding-bottom: 5px;
+  padding-top: 20px;
+}

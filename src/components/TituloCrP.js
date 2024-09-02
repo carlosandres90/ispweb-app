@@ -4,7 +4,7 @@ import '../styles/titulopantallas.css';
 function TituloCrP(){
     return (
         <div className="titulo">
-            <p className="titulo_centrar">CREACION DE PLAN</p>
+            <p className="titulo_centrar">CREAR PLAN</p>
         </div>
     );
 }

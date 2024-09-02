@@ -16,13 +16,17 @@ const DatosClientesActualizar = ({ usuario }) => {
                     return;
                 }
 
+                const dataI = {
+                    targetMethod: "GET",
+                };
+
                 // Realizar la consulta a la API usando la cédula
-                const response = await fetch('http://localhost:3001/clientes/buscar', {
+                const response = await fetch(`http://3.142.35.243:8762/ms-clientes/clientes/${usuario.cedula}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({cedula: usuario.cedula}),
+                    body: JSON.stringify(dataI),
                 });
 
                 if (!response.ok) {
@@ -65,7 +69,7 @@ const DatosClientesActualizar = ({ usuario }) => {
                 </div>
                 <div class="form-group-CnC">
                     <label class="label-CnC" for="telefono">TELÉFONO:</label>
-                    <input class="input-CnC" type="tel" id="telefono" name="telefono" value={cliente.telefono} required disabled/>
+                    <input class="input-CnC" type="tel" id="telefono" name="telefono" value={cliente.numeroTelefono} required disabled/>
                 </div>
             </form>
             ) : (<p>No se ha encontrado al cliente.</p>

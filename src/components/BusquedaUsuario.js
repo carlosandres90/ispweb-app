@@ -9,9 +9,31 @@ const BusquedaUsuario = ({ setSelectedUser }) => {
     const [codigo, setCodigo] = useState('');
     const { loading, error, buscarUsuarioPorCodigo } = useBuscarPorUsuario();
 
+    const validarEntrada = () => {
+        let errores = [];
+
+        // Validar codigo del usuario que se buscará (sin caracteres especiales peligrosos)
+        if (!/^[a-zA-Z0-9\s,.-]+$/.test(codigo)) {
+            errores.push("El código contiene caracteres inválidos.");
+        }
+
+        if (errores.length > 0) {
+            alert("Errores en el formulario:\n" + errores.join("\n"));
+        }
+
+        return errores.length === 0;
+    };
+
+    const limpiarEntrada = (str) => {
+        return str.replace(/[<>{}]/g, ""); // Elimina caracteres potencialmente peligrosos
+    };
+
     const handleSearch = (e) => {
         e.preventDefault();
-        buscarUsuarioPorCodigo(codigo).then((usuario) => {
+        if (!validarEntrada()) {
+            return;
+        }
+        buscarUsuarioPorCodigo(limpiarEntrada(codigo)).then((usuario) => {
             setSelectedUser(usuario);
         });
       }; 

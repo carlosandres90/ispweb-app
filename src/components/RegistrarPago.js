@@ -1,24 +1,80 @@
-import React, { useState }from "react";
+import React, { useEffect, useState }from "react";
 import '../styles/registrarpago.css';
 
 function RegistrarPago({ usuario }){
 
-    console.log(usuario.codigo);
     const [pago, setPago] = useState('');
     const [cuenta, setCuenta] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [setCodigo] = useState(usuario.codigo);
     const [mensaje, setMensaje] = useState('');
 
+    const validarEntrada = () => {
+        let errores = [];
+
+        if (cuenta.trim() !== cuenta) {
+            errores.push("El tipo de cuenta no debe tener espacios al inicio o al final.");
+        }
+
+        // Validar tipo cuenta (sin caracteres especiales peligrosos)
+        if (!/^[a-zA-Z0-9\s,.-]+$/.test(cuenta)) {
+            errores.push("El tipo de cuenta contiene caracteres inválidos.");
+        }
+
+        // Validar precio (solo números con hasta 2 decimales)
+        if (!/^\d+(\.\d{1,2})?$/.test(pago)) {
+            errores.push("El precio debe ser un número decimal válido con hasta 2 decimales.");
+        }
+
+        // Validar dirección (sin caracteres especiales peligrosos)
+        if (!/^[a-zA-Z0-9\s,.\-áéíóúÁÉÍÓÚñÑ]+$/.test(descripcion)) {
+            errores.push("La dirección contiene caracteres inválidos.");
+        }
+
+        if (errores.length > 0) {
+            alert("Errores en el formulario:\n" + errores.join("\n"));
+        }
+
+        return errores.length === 0;
+    };
+
+    const limpiarEntrada = (str) => {
+        return str.replace(/[<>{}]/g, ""); // Elimina caracteres potencialmente peligrosos
+    };
+
+    useEffect(() => {
+        if (usuario) {
+            setMensaje('');
+            setPago('');
+            setCuenta('');
+            setDescripcion('');
+        }
+    }, [usuario]);  // Esto asegura que se actualicen los valores cuando cambia el usuario
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3001/pagos', {
+        if (!validarEntrada()) {
+            return;
+        }
+
+        const dataI = {
+            targetMethod: "POST",
+            body: {
+                usuarioCodigo: usuario.codigo,
+                valor: limpiarEntrada(pago),
+                descripcion: limpiarEntrada(descripcion),
+                tipoCuenta: limpiarEntrada(cuenta),
+                responsable: "Administrador"
+            }
+          };
+
+        fetch('http://3.142.35.243:8762/ms-pagos/pagos', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ codigo:usuario.codigo, pago, cuenta, descripcion }),
+            body: JSON.stringify(dataI),
           })
         .then(response => response.json())
         .then(data => {
@@ -39,7 +95,7 @@ function RegistrarPago({ usuario }){
                     <label class="label-Rp" for="pago">PAGO:</label>
                     <input 
                     class="input-Rp" 
-                    type="text" 
+                    type="number" 
                     id="pago" 
                     name="pago" 
                     value={pago}

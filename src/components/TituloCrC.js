@@ -4,7 +4,7 @@ import '../styles/titulopantallas.css';
 function TituloCrC(){
     return (
         <div className="titulo">
-            <p className="titulo_centrar">CREACIÓN DE CLIENTES</p>
+            <p className="titulo_centrar">CREAR CLIENTES</p>
         </div>
     );
 }

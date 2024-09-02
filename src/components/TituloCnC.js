@@ -4,7 +4,7 @@ import '../styles/titulopantallas.css';
 const TituloCnC = ()=>{
     return (
         <div className="titulo">
-            <p className="titulo_centrar">CONSULTA DE CLIENTES</p>
+            <p className="titulo_centrar">CONSULTAR CLIENTES</p>
         </div>
     );
 }
