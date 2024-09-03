@@ -4,7 +4,7 @@ import '../styles/consultarpago.css';
 function ConsultarPago({ usuario }) {
     const [pagos, setPagos] = useState([]);
     const [mensaje, setMensaje] = useState('');
-    const [botonDeshabilitado, setBotonDeshabilitado] = useState(false);
+    
 
     useEffect(() => {
         if (usuario) {
@@ -33,7 +33,7 @@ function ConsultarPago({ usuario }) {
                 });
 
                 if (!response.ok) {
-                    throw new Error('CLIENTE NO ENCONTRADO');
+                    throw new Error('PAGOS NO ENCONTRADOS');
                 }
 
                 const data = await response.json();
@@ -45,7 +45,6 @@ function ConsultarPago({ usuario }) {
                     setMensaje(''); // Limpia cualquier mensaje previo
                 }
             } catch (err) {
-                    setMensaje('EL USUARIO NO REGISTRA PAGOS');
                 setPagos([]); // Limpia la tabla si hay un error
                 setMensaje('EL USUARIO NO REGISTRA PAGOS');
             }
@@ -61,22 +60,33 @@ function ConsultarPago({ usuario }) {
             return;
         }
 
-        const ultimoPagoId = pagos[pagos.length - 1].id;
-
         try {
-            const response = await fetch(`http://192.168.100.141:3001/pagos/${ultimoPagoId}`, {
-                method: 'DELETE',
+            const dataE = {
+                targetMethod: "DELETE",
+            };
+            const response = await fetch(`http://3.142.35.243:8762/ms-pagos/pagos/usuario/${usuario.codigo}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dataE),
+            });
+            console.log(response);
+
+           // Una vez eliminado, vuelve a obtener la lista de pagos actualizada
+           const updatedPagos = await fetch(`http://3.142.35.243:8762/ms-pagos/pagos/usuario/${usuario.codigo}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ targetMethod: "GET" }),
             });
 
-            if (response.ok) {
-                // Eliminar el último pago de la lista de pagos en el estado
-                const nuevosPagos = pagos.slice(0, -1);
-                setPagos(nuevosPagos);
-                setBotonDeshabilitado(true);  // Deshabilita el botón después de eliminar el último pago
-                setMensaje('Último pago eliminado con éxito.');
-            } else {
-                throw new Error('Error al eliminar el último pago.');
-            }
+            const pagosData = await updatedPagos.json();
+            setPagos(pagosData);
+            setMensaje('Último pago cancelado con éxito.');
+
+           
         } catch (error) {
             console.error('Error eliminando el último pago:', error);
             setMensaje('Error al eliminar el último pago.');
@@ -85,7 +95,7 @@ function ConsultarPago({ usuario }) {
 
     return (
         <div className='lista-pagos scroll-container'>
-            {mensaje && <h2>{mensaje}</h2>}
+            
             {pagos.length > 0 ? (
                 <table className='tabla-pagos'>
                     <thead>
@@ -94,6 +104,7 @@ function ConsultarPago({ usuario }) {
                             <th className="adjust-to-text">CUENTA</th>
                             <th className="adjust-to-text">FECHA DE PAGO</th>
                             <th className="adjust-to-text">DESCRIPCION</th>
+                            <th className="adjust-to-text">ESTADO</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -103,6 +114,7 @@ function ConsultarPago({ usuario }) {
                                 <td className="adjust-to-text">{pago.tipoCuenta}</td>
                                 <td className="adjust-to-text">{pago.fechaPago}</td>
                                 <td className="adjust-to-text">{pago.descripcion}</td>
+                                <td className="adjust-to-text">{pago.estado}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -112,9 +124,10 @@ function ConsultarPago({ usuario }) {
                 className="button-act-pago" 
                 type="submit" 
                 onClick={handleEliminarUltimoPago}
-                disabled={botonDeshabilitado}>
+                >
                     ELIMINAR ÚLTIMO PAGO
             </button>
+            {mensaje && <h2>{mensaje}</h2>}
         </div>
     );
 }

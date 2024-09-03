@@ -14,10 +14,6 @@ const ListaUsuarios =  ({ cliente }) => {
                 setUsuarios([]); // Si no hay cédula, limpia la tabla
                 return;
             }
-
-            
-    
-
             try {
                 const data1 = {
                     targetMethod: "GET",
