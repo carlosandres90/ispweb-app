@@ -8,6 +8,34 @@ function ActualizarPlan() {
     const [selectedPlan, setSelectedPlan] = useState('');
     const [mensaje, setMensaje] = useState('');
 
+    const validarEntrada = () => {
+        let errores = [];
+
+        if (anchobanda.trim() !== anchobanda) {
+            errores.push("El ancho de banda no debe tener espacios al inicio o al final.");
+        }
+
+        // Validar precio (solo números con hasta 2 decimales)
+        if (!/^\d+(\.\d{1,2})?$/.test(precio)) {
+            errores.push("El precio debe ser un número decimal válido con hasta 2 decimales.");
+        }
+
+        // Validar ancho de banda (sin caracteres especiales peligrosos)
+        if (!/^[a-zA-Z0-9\s,.-]+$/.test(anchobanda)) {
+            errores.push("La dirección contiene caracteres inválidos.");
+        }
+
+        if (errores.length > 0) {
+            alert("Errores en el formulario:\n" + errores.join("\n"));
+        }
+
+        return errores.length === 0;
+    };
+
+    const limpiarEntrada = (str) => {
+        return str.replace(/[<>{}]/g, ""); // Elimina caracteres potencialmente peligrosos
+    };
+
     useEffect(() => {
         // Función para obtener los planes de la API
         const obtenerPlanes = async () => {
@@ -68,12 +96,17 @@ function ActualizarPlan() {
     // ACTUALIZAR EL PLAN
     const handleActualizarClick = async (e) => {
         e.preventDefault();
+
+        if (!validarEntrada()) {
+            return;
+        }
+
         try {
             const data3 = {
                 targetMethod: "PUT",
                 body: {
-                    anchoBanda: anchobanda,
-                    precio: precio
+                    anchoBanda: limpiarEntrada(anchobanda),
+                    precio: limpiarEntrada(precio)
                 }
             };
             console.log(data3);

@@ -105,6 +105,7 @@ function ConsultarPago({ usuario }) {
                             <th className="adjust-to-text">FECHA DE PAGO</th>
                             <th className="adjust-to-text">DESCRIPCION</th>
                             <th className="adjust-to-text">ESTADO</th>
+                            <th className="adjust-to-text">SALDO</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,6 +116,7 @@ function ConsultarPago({ usuario }) {
                                 <td className="adjust-to-text">{pago.fechaPago}</td>
                                 <td className="adjust-to-text">{pago.descripcion}</td>
                                 <td className="adjust-to-text">{pago.estado}</td>
+                                <td className="adjust-to-text">{pago.saldo}</td>
                             </tr>
                         ))}
                     </tbody>
