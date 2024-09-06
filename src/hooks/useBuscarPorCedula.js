@@ -10,7 +10,7 @@ export const useBuscarPorCedula = () => {
     setError(null);
     try {
         
-      const response = await fetch(`/api/1717171717`, {
+      const response = await fetch(`/api`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
