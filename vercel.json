@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "http://3.142.35.243:8762/ms-clientes/clientes/$1"
+    }
+  ]
+}
