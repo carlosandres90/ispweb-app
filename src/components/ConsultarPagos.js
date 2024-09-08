@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../styles/consultarpago.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
-
 function ConsultarPago({ usuario }) {
     const [pagos, setPagos] = useState([]);
     const [mensaje, setMensaje] = useState('');
@@ -26,7 +24,7 @@ function ConsultarPago({ usuario }) {
                 const dataI = {
                     targetMethod: "GET",
                 };
-                const response = await fetch(`${apiUrl}/ms-pagos/pagos/usuario/${usuario.codigo}`, {
+                const response = await fetch(`/api/pagos/usuario/${usuario.codigo}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -66,7 +64,7 @@ function ConsultarPago({ usuario }) {
             const dataE = {
                 targetMethod: "DELETE",
             };
-            const response = await fetch(`${apiUrl}/ms-pagos/pagos/usuario/${usuario.codigo}`, {
+            const response = await fetch(`/api/pagos/usuario/${usuario.codigo}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -76,7 +74,7 @@ function ConsultarPago({ usuario }) {
             console.log(response);
 
            // Una vez eliminado, vuelve a obtener la lista de pagos actualizada
-           const updatedPagos = await fetch(`${apiUrl}/ms-pagos/pagos/usuario/${usuario.codigo}`, {
+           const updatedPagos = await fetch(`/api/pagos/usuario/${usuario.codigo}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

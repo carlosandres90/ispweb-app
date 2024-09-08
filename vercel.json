@@ -7,6 +7,10 @@
       {
         "source": "/api/planes/(.*)",
         "destination": "http://3.142.35.243:8762/ms-planes/planes/$1"
+      },
+      {
+        "source": "/api/pagos/usuario/(.*)",
+        "destination": "http://3.142.35.243:8762/ms-pagos/pagos/usuario/$1"
       }
     ]
   }
