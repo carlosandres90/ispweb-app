@@ -33,7 +33,7 @@ const ListaUsuarios =  ({ cliente }) => {
                 const data = await response.json();
                 setUsuarios(data); // Actualiza la lista de usuarios con los datos obtenidos
             } catch (err) {
-                console.log('Error al buscar los usuarios. Inténtalo de nuevo.')
+                
 
             } finally {
                 

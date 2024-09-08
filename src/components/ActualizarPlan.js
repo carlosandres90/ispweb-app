@@ -109,7 +109,6 @@ function ActualizarPlan() {
                     precio: limpiarEntrada(precio)
                 }
             };
-            console.log(data3);
             const response = await fetch(`/api/planes/${selectedPlan}`, {
                 method: 'POST',
                 headers: {
@@ -124,8 +123,6 @@ function ActualizarPlan() {
             {
                 setMensaje('Plan actualizado con éxito');
             }
-
-            console.log('Plan actualizado exitosamente');
         } catch (error) {
             console.error('Error al actualizar el plan:', error);
         }

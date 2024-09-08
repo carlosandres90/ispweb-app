@@ -78,8 +78,6 @@ function CrearClientes(){
             }
           };
 
-        console.log(data);
-
         fetch('/api/clientes/cliente', {
             method: 'POST',
             headers: {
@@ -90,7 +88,6 @@ function CrearClientes(){
         .then(response => response.json())
         .then(data => {
             setMensaje('Cliente ingresado con éxito');
-            console.log('Cliente agregado:', data);
             setCedula('');
             setNombre('');
             setApellido('');

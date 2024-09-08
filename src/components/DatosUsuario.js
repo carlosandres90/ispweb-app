@@ -113,7 +113,6 @@ function DatosUsuario({ cliente }) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Usuario agregado:', data);
             setCodigo('');
             setPlan('');
             setPrecio('');

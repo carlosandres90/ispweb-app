@@ -71,8 +71,9 @@ function ConsultarPago({ usuario }) {
                 },
                 body: JSON.stringify(dataE),
             });
-            console.log(response);
-
+            if(!response.ok){
+                console.log('Error en eliminar el pago')
+            }
            // Una vez eliminado, vuelve a obtener la lista de pagos actualizada
            const updatedPagos = await fetch(`/api/pagos/usuario/${usuario.codigo}`, {
                 method: 'POST',

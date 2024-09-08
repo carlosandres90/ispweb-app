@@ -108,7 +108,7 @@ function PlanContratado({ usuario }) {
                 },
                 body: JSON.stringify(data1),
             });
-            console.log(response.json());
+            
             if (response.ok) {
                 setMensaje("Usuario actualizado con éxito.");
             } else {

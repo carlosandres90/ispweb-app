@@ -76,9 +76,8 @@ const DatosClientes = ({ cliente }) => {
             throw new Error('Error al actualizar el cliente');
           }
     
-          const updatedCliente = await response.json();
+          
           setMensaje('Cliente actualizado con éxito');
-          console.log('Cliente actualizado:', updatedCliente);
         } catch (error) {
           setMensaje('Error al actualizar el cliente');
           console.error('Error:', error);

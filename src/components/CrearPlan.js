@@ -60,7 +60,6 @@ function CrearPlan(){
         .then(response => response.json())
         .then(data => {
             setMensaje('Plan ingresado con éxito');
-            console.log('Plan agregado:', data);
             setAnchobanda('');
             setPrecio('');
         })

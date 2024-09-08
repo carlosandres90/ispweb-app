@@ -81,7 +81,7 @@ function RegistrarPago({ usuario }){
         .then(response => response.json())
         .then(data => {
             setMensaje('Pago registrado con éxito');
-            console.log('Pago agregado:', data);
+            
             setCodigo(usuario.codigo);
             setPago('');
             setCuenta('');
