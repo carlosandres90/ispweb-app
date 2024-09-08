@@ -56,7 +56,6 @@ function ActualizarPlan() {
                 const data = await response.json();
                 setPlanes(data); // Almacenar los planes en el estado
             } catch (error) {
-                console.log(apiUrl);
                 console.error('Error obteniendo los planes:', error);
             }
         };
