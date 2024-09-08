@@ -1,0 +1,13 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/planes/plan",
+        "destination": "http://3.142.35.243:8762/ms-planes/planes"
+      },
+      {
+        "source": "/api/planes/(.*)",
+        "destination": "http://3.142.35.243:8762/ms-planes/planes/$1"
+      }
+    ]
+  }
+  

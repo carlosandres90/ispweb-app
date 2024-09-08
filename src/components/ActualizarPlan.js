@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../styles/actualizarplan.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
+//const apiUrl = process.env.REACT_APP_API_URL
 
 function ActualizarPlan() {
     const [planes, setPlanes] = useState([]); // Estado para almacenar los planes obtenidos
@@ -45,7 +45,7 @@ function ActualizarPlan() {
                 const data1 = {
                     targetMethod: "GET",
                 };
-                const response = await fetch(`${apiUrl}/ms-planes/planes`, {
+                const response = await fetch('/api/planes/plan', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ function ActualizarPlan() {
             const data2 = {
                 targetMethod: "GET",
             };
-            const response = await fetch(`${apiUrl}/ms-planes/planes/${selectedPlan}`, {
+            const response = await fetch(`/api/planes/${selectedPlan}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ function ActualizarPlan() {
                 }
             };
             console.log(data3);
-            const response = await fetch(`${apiUrl}/ms-planes/planes/${selectedPlan}`, {
+            const response = await fetch(`/api/planes/${selectedPlan}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
