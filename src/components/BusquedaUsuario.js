@@ -42,10 +42,10 @@ const BusquedaUsuario = ({ setSelectedUser }) => {
     return (
         <div className="container-busqueda-cedula">
             <form className="form-busqueda-cedula" onSubmit = {handleSearch}>
-                <div class="form-group-BC">
-                    <label class="label-BC" for="usuarioB">USUARIO:</label>
+                <div className="form-group-BC">
+                    <label className="label-BC" htmlFor="usuarioB">USUARIO:</label>
                     <input 
-                        class="input-BC" 
+                        className="input-BC" 
                         type="text" 
                         id="usuarioB" 
                         name="usuarioB" 
@@ -53,7 +53,7 @@ const BusquedaUsuario = ({ setSelectedUser }) => {
                         onChange={(e) => setCodigo(e.target.value)}
                         required />
                 </div>
-                <button class="button-BC" type="submit">BUSCAR</button>
+                <button className="button-BC" type="submit">BUSCAR</button>
             </form>
             {loading && <h1 className="mensaje-error">Cargando...</h1>}
             {error && <h1 className="mensaje-error">{error}</h1>}

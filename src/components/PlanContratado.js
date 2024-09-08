@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import '../styles/datosusuarioact.css';
 
+const apiUrl = process.env.REACT_APP_API_URL
+
 function PlanContratado({ usuario }) {
     const [selectedPlan, setSelectedPlan] = useState(usuario.anchoBanda || '');
     const [precio, setPrecio] = useState(usuario.precio || '');
@@ -56,7 +58,7 @@ function PlanContratado({ usuario }) {
                     targetMethod: "GET",
                 };
 
-                const response = await fetch('http://3.142.35.243:8762/ms-planes/planes', {
+                const response = await fetch(`${apiUrl}/ms-planes/planes`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -99,7 +101,7 @@ function PlanContratado({ usuario }) {
                     direccion: limpiarEntrada(direccion)
                 }
             };
-            const response = await fetch(`http://3.142.35.243:8762/ms-usuarios/usuarios/${usuario.codigo}`, {
+            const response = await fetch(`${apiUrl}/ms-usuarios/usuarios/${usuario.codigo}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

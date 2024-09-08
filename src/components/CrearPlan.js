@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import '../styles/crearplan.css';
 
+const apiUrl = process.env.REACT_APP_API_URL
+
 function CrearPlan(){
     const [anchobanda, setAnchobanda] = useState('');
     const [precio, setPrecio] = useState('');
@@ -50,7 +52,7 @@ function CrearPlan(){
           };
 
 
-        fetch('http://3.142.35.243:8762/ms-planes/planes', {
+        fetch(`${apiUrl}/ms-planes/planes`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -68,11 +70,11 @@ function CrearPlan(){
     };
 
     return (
-        <div class="form-container-CrP">
-            <form class="form-CrP" onSubmit={handleSubmit}>
-                <div class="form-group-CrP">
-                    <label class="label-CrP" for="ancho-banda">ANCHO DE BANDA:</label>
-                    <input class="input-CrP" 
+        <div className="form-container-CrP">
+            <form className="form-CrP" onSubmit={handleSubmit}>
+                <div className="form-group-CrP">
+                    <label className="label-CrP" htmlFor="ancho-banda">ANCHO DE BANDA:</label>
+                    <input className="input-CrP" 
                     type="text" 
                     id="ancho-banda" 
                     name="ancho-banda" 
@@ -81,9 +83,9 @@ function CrearPlan(){
                     required 
                 />
                 </div>
-                <div class="form-group-CrP">
-                    <label class="label-CrP" for="precio">PRECIO:</label>
-                    <input class="input-CrP" 
+                <div className="form-group-CrP">
+                    <label className="label-CrP" htmlFor="precio">PRECIO:</label>
+                    <input className="input-CrP" 
                     type="number" 
                     id="precio" 
                     name="precio" 
@@ -91,7 +93,7 @@ function CrearPlan(){
                     onChange={(e) => setPrecio(e.target.value)}
                     required />
                 </div>         
-                <button class="button-CrP" type="submit">CREAR</button>
+                <button className="button-CrP" type="submit">CREAR</button>
             </form>
             {mensaje && <h1>{mensaje}</h1>}
         </div>

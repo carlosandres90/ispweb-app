@@ -43,10 +43,10 @@ const BusquedaCedula = ({ setSelectedClient }) => {
     return (
         <div className="container-busqueda-cedula">
             <form className="form-busqueda-cedula" onSubmit={handleSearch}>
-                <div class="form-group-BC">
-                    <label class="label-BC" for="cedulaB">CEDULA:</label>
+                <div className="form-group-BC">
+                    <label className="label-BC" htmlFor="cedulaB">CEDULA:</label>
                     <input 
-                        class="input-BC" 
+                        className="input-BC" 
                         type="number" 
                         id="cedulaB" 
                         name="cedulaB" 
@@ -55,7 +55,7 @@ const BusquedaCedula = ({ setSelectedClient }) => {
                         required 
                     />
                 </div>
-                <button class="button-BC" type="submit">BUSCAR</button>
+                <button className="button-BC" type="submit">BUSCAR</button>
             </form>
             
             {loading && <h1 className="mensaje-error">Cargando...</h1>}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../styles/datosusuario.css';
 
+const apiUrl = process.env.REACT_APP_API_URL
+
 function DatosUsuario({ cliente }) {
     const [codigo, setCodigo] = useState('');
     const [plan, setPlan] = useState('');
@@ -59,7 +61,7 @@ function DatosUsuario({ cliente }) {
                     targetMethod: "GET",
                 };
 
-                const response = await fetch('http://3.142.35.243:8762/ms-planes/planes', {
+                const response = await fetch(`${apiUrl}/ms-planes/planes`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -102,7 +104,7 @@ function DatosUsuario({ cliente }) {
             }
           };
 
-        fetch('http://3.142.35.243:8762/ms-usuarios/usuarios', {
+        fetch(`${apiUrl}/ms-usuarios/usuarios`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

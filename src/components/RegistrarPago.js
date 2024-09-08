@@ -1,6 +1,8 @@
 import React, { useEffect, useState }from "react";
 import '../styles/registrarpago.css';
 
+const apiUrl = process.env.REACT_APP_API_URL
+
 function RegistrarPago({ usuario }){
 
     const [pago, setPago] = useState('');
@@ -69,7 +71,7 @@ function RegistrarPago({ usuario }){
             }
           };
 
-        fetch('http://3.142.35.243:8762/ms-pagos/pagos', {
+        fetch(`${apiUrl}/ms-pagos/pagos`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -89,12 +91,12 @@ function RegistrarPago({ usuario }){
     };
 
     return (
-        <div class="form-container-Rp">
-            <form class="form-Rp" onSubmit={handleSubmit}>
-                <div class="form-group-Rp">
-                    <label class="label-Rp" for="pago">PAGO:</label>
+        <div className="form-container-Rp">
+            <form className="form-Rp" onSubmit={handleSubmit}>
+                <div className="form-group-Rp">
+                    <label className="label-Rp" htmlFor="pago">PAGO:</label>
                     <input 
-                    class="input-Rp" 
+                    className="input-Rp" 
                     type="number" 
                     id="pago" 
                     name="pago" 
@@ -103,10 +105,10 @@ function RegistrarPago({ usuario }){
                     required />
                 </div>
                 
-                <div class="form-group-Rp">
-                    <label class="label-Rp" for="tipo-cuenta">TIPO DE CUENTA:</label>
+                <div className="form-group-Rp">
+                    <label className="label-Rp" htmlFor="tipo-cuenta">TIPO DE CUENTA:</label>
                     <input 
-                    class="input-Rp" 
+                    className="input-Rp" 
                     type="text" 
                     id="tipo-cuenta" 
                     name="tipo-cuenta" 
@@ -114,10 +116,10 @@ function RegistrarPago({ usuario }){
                     onChange={(e) => setCuenta(e.target.value)} 
                     required />
                 </div>
-                <div class="form-group-Rp">
-                    <label class="label-Rp" for="descripcion">DESCRIPCIÓN:</label>
+                <div className="form-group-Rp">
+                    <label className="label-Rp" htmlFor="descripcion">DESCRIPCIÓN:</label>
                     <input 
-                    class="input-Rp" 
+                    className="input-Rp" 
                     type="text" 
                     id="descripcion" 
                     name="descripcion" 
@@ -125,7 +127,7 @@ function RegistrarPago({ usuario }){
                     onChange={(e) => setDescripcion(e.target.value)} 
                     required />
                 </div>                
-                <button class="button-Rp" type="submit">REGISTRAR</button>
+                <button className="button-Rp" type="submit">REGISTRAR</button>
             </form>
             {mensaje && <h2>{mensaje}</h2>}
         </div>

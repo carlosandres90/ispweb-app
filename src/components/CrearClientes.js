@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import '../styles/crearclientes.css';
 
+const apiUrl = process.env.REACT_APP_API_URL
+
 function CrearClientes(){
     const [cedula, setCedula] = useState('');
     const [nombre, setNombre] = useState('');
@@ -78,7 +80,7 @@ function CrearClientes(){
             }
           };
 
-        fetch('http://3.142.35.243:8762/ms-clientes/clientes', {
+        fetch(`${apiUrl}/ms-clientes/clientes`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -99,12 +101,12 @@ function CrearClientes(){
     };
 
     return (
-        <div class="form-container-CrC">
-            <form class="form-CrC" onSubmit={handleSubmit}>
-                <div class="form-group-CrC">
-                    <label class="label-CrC" for="apellidos">APELLIDOS:</label>
+        <div className="form-container-CrC">
+            <form className="form-CrC" onSubmit={handleSubmit}>
+                <div className="form-group-CrC">
+                    <label className="label-CrC" htmlFor="apellidos">APELLIDOS:</label>
                     <input 
-                        class="input-CrC" 
+                        className="input-CrC" 
                         type="text" 
                         id="apellidos" 
                         name="apellidos" 
@@ -113,10 +115,10 @@ function CrearClientes(){
                         required 
                     />
                 </div>
-                <div class="form-group-CrC">
-                    <label class="label-CrC" for="nombres">NOMBRES:</label>
+                <div className="form-group-CrC">
+                    <label className="label-CrC" htmlFor="nombres">NOMBRES:</label>
                     <input 
-                        class="input-CrC" 
+                        className="input-CrC" 
                         type="text" 
                         id="nombre" 
                         name="nombre"
@@ -125,10 +127,10 @@ function CrearClientes(){
                         required 
                     />
                 </div>
-                <div class="form-group-CrC">
-                    <label class="label-CrC" for="cedula">CÉDULA:</label>
+                <div className="form-group-CrC">
+                    <label className="label-CrC" htmlFor="cedula">CÉDULA:</label>
                     <input 
-                        class="input-CrC" 
+                        className="input-CrC" 
                         type="number" 
                         id="cedula" 
                         name="cedula"
@@ -137,10 +139,10 @@ function CrearClientes(){
                         required 
                     />
                 </div>
-                <div class="form-group-CrC">
-                    <label class="label-CrC" for="direccion">DIRECCIÓN:</label>
+                <div className="form-group-CrC">
+                    <label className="label-CrC" htmlFor="direccion">DIRECCIÓN:</label>
                     <input 
-                        class="input-CrC" 
+                        className="input-CrC" 
                         type="text" 
                         id="direccion"
                         name="direccion"
@@ -149,10 +151,10 @@ function CrearClientes(){
                         required 
                     />
                 </div>
-                <div class="form-group-CrC">
-                    <label class="label-CrC" for="telefono">TELÉFONO:</label>
+                <div className="form-group-CrC">
+                    <label className="label-CrC" htmlFor="telefono">TELÉFONO:</label>
                     <input 
-                        class="input-CrC" 
+                        className="input-CrC" 
                         type="tel"
                         id="telefono" 
                         name="telefono" 
@@ -160,7 +162,7 @@ function CrearClientes(){
                         onChange={(e) => setnumeroTelefono(e.target.value)}
                         required />
                 </div>
-                <button class="button-CrC" type="submit">INGRESAR</button>
+                <button className="button-CrC" type="submit">INGRESAR</button>
             </form>
             {mensaje && <h1>{mensaje}</h1>}
         </div>

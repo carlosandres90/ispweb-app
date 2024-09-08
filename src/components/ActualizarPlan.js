@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../styles/actualizarplan.css';
 
+const apiUrl = process.env.REACT_APP_API_URL
+
 function ActualizarPlan() {
     const [planes, setPlanes] = useState([]); // Estado para almacenar los planes obtenidos
     const [anchobanda, setAnchobanda] = useState('');
@@ -43,18 +45,18 @@ function ActualizarPlan() {
                 const data1 = {
                     targetMethod: "GET",
                 };
-                const response = await fetch(`http://3.142.35.243:8762/ms-planes/planes`, {
+                const response = await fetch(`${apiUrl}/ms-planes/planes`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data1), // Envía la cédula en el cuerpo de la solicitud
                 });
-                console.log(data1);
+                
                 const data = await response.json();
-                console.log(data);
                 setPlanes(data); // Almacenar los planes en el estado
             } catch (error) {
+                console.log(apiUrl);
                 console.error('Error obteniendo los planes:', error);
             }
         };
@@ -73,7 +75,7 @@ function ActualizarPlan() {
             const data2 = {
                 targetMethod: "GET",
             };
-            const response = await fetch(`http://3.142.35.243:8762/ms-planes/planes/${selectedPlan}`, {
+            const response = await fetch(`${apiUrl}/ms-planes/planes/${selectedPlan}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -110,7 +112,7 @@ function ActualizarPlan() {
                 }
             };
             console.log(data3);
-            const response = await fetch(`http://3.142.35.243:8762/ms-planes/planes/${selectedPlan}`, {
+            const response = await fetch(`${apiUrl}/ms-planes/planes/${selectedPlan}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import '../styles/datosclientes.css';
 
+const apiUrl = process.env.REACT_APP_API_URL
+
 const DatosClientes = ({ cliente }) => {
     
     const [direccion, setDireccion] = useState('');
@@ -64,7 +66,7 @@ const DatosClientes = ({ cliente }) => {
           };
     
         try {
-          const response = await fetch(`http://3.142.35.243:8762/ms-clientes/clientes/${cliente.cedula}`, {
+          const response = await fetch(`${apiUrl}/ms-clientes/clientes/${cliente.cedula}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -87,13 +89,13 @@ const DatosClientes = ({ cliente }) => {
 
     
         return (
-            <div class="form-container-CnC">
+            <div className="form-container-CnC">
                 <h2> DATOS CLIENTE </h2>
-                <form class="form-CnC" onSubmit={handleUpdate}>
-                    <div class="form-group-CnC">
-                        <label class="label-CnC" for="apellidos">APELLIDOS:</label>
+                <form className="form-CnC" onSubmit={handleUpdate}>
+                    <div className="form-group-CnC">
+                        <label className="label-CnC" htmlFor="apellidos">APELLIDOS:</label>
                         <input 
-                            class="input-CnC" 
+                            className="input-CnC" 
                             type="text" 
                             id="apellidos" 
                             name="apellidos" 
@@ -102,10 +104,10 @@ const DatosClientes = ({ cliente }) => {
                             disabled
                         />
                     </div>
-                    <div class="form-group-CnC">
-                        <label class="label-CnC" for="nombres">NOMBRES:</label>
+                    <div className="form-group-CnC">
+                        <label className="label-CnC" htmlFor="nombres">NOMBRES:</label>
                         <input 
-                            class="input-CnC" 
+                            className="input-CnC" 
                             type="text" 
                             id="nombres" 
                             name="nombres" 
@@ -114,10 +116,10 @@ const DatosClientes = ({ cliente }) => {
                             disabled
                         />
                     </div>
-                    <div class="form-group-CnC">
-                        <label class="label-CnC" for="cedula">CÉDULA:</label>
+                    <div className="form-group-CnC">
+                        <label className="label-CnC" htmlFor="cedula">CÉDULA:</label>
                         <input 
-                            class="input-CnC" 
+                            className="input-CnC" 
                             type="text" 
                             id="cedula" 
                             name="cedula" 
@@ -126,10 +128,10 @@ const DatosClientes = ({ cliente }) => {
                             disabled
                         />
                     </div>
-                    <div class="form-group-CnC">
-                        <label class="label-CnC" for="direccion">DIRECCIÓN:</label>
+                    <div className="form-group-CnC">
+                        <label className="label-CnC" htmlFor="direccion">DIRECCIÓN:</label>
                         <input 
-                            class="input-CnC" 
+                            className="input-CnC" 
                             type="text" 
                             id="direccion" 
                             name="direccion" 
@@ -138,10 +140,10 @@ const DatosClientes = ({ cliente }) => {
                             required 
                         />
                     </div>
-                    <div class="form-group-CnC">
-                        <label class="label-CnC" for="telefono">TELÉFONO:</label>
+                    <div className="form-group-CnC">
+                        <label className="label-CnC" htmlFor="telefono">TELÉFONO:</label>
                         <input 
-                            class="input-CnC" 
+                            className="input-CnC" 
                             type="tel" 
                             id="telefono" 
                             name="telefono" 
@@ -151,7 +153,7 @@ const DatosClientes = ({ cliente }) => {
                         />
                     </div>
                     <div className="button-group">
-                        <button class="button-CnC" type="submit">ACTUALIZAR</button>
+                        <button className="button-CnC" type="submit">ACTUALIZAR</button>
                     </div>
                     {mensaje && <h2 className="error-CnC">{mensaje}</h2>}
                 </form>

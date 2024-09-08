@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/listausuarios.css';
 
+const apiUrl = process.env.REACT_APP_API_URL
+
 const ListaUsuarios =  ({ cliente }) => {
     
     const[usuarios, setUsuarios] = useState([]);
@@ -18,7 +20,7 @@ const ListaUsuarios =  ({ cliente }) => {
                 const data1 = {
                     targetMethod: "GET",
                 };
-                const response = await fetch(`http://3.142.35.243:8762/ms-usuarios/usuarios/cliente/${cliente.cedula}`, {
+                const response = await fetch(`${apiUrl}/ms-usuarios/usuarios/cliente/${cliente.cedula}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -48,25 +50,25 @@ const ListaUsuarios =  ({ cliente }) => {
     
 
   return (
-    <div class='lista-clientes scroll-container'>
-      <table class = 'tabla-usuarios'>
+    <div className='lista-clientes scroll-container'>
+      <table className = 'tabla-usuarios'>
             <thead>
                 <tr>
-                    <th class="adjust-to-text">CÓDIGO USUARIO</th>
-                    <th class="adjust-to-text">PLAN</th>
-                    <th class="adjust-to-text">PRECIO</th>
-                    <th class="adjust-to-text">DIRECCIÓN</th>
-                    <th class="adjust-to-text">ESTADO</th>
+                    <th className="adjust-to-text">CÓDIGO USUARIO</th>
+                    <th className="adjust-to-text">PLAN</th>
+                    <th className="adjust-to-text">PRECIO</th>
+                    <th className="adjust-to-text">DIRECCIÓN</th>
+                    <th className="adjust-to-text">ESTADO</th>
                 </tr>
             </thead>
             <tbody>
             {usuarios.map(usuario => (
                 <tr key={usuario.id} >
-                    <td class="adjust-to-text">{usuario.codigo}</td>
-                    <td class="adjust-to-text">{usuario.anchoBanda}</td>
-                    <td class="adjust-to-text">{usuario.precio}</td>
+                    <td className="adjust-to-text">{usuario.codigo}</td>
+                    <td className="adjust-to-text">{usuario.anchoBanda}</td>
+                    <td className="adjust-to-text">{usuario.precio}</td>
                     <td>{usuario.direccion}</td>
-                    <td class="adjust-to-text">{usuario.estado}</td>
+                    <td className="adjust-to-text">{usuario.estado}</td>
                 </tr>
             ))}
             </tbody>
