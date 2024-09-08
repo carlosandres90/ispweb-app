@@ -78,6 +78,8 @@ function CrearClientes(){
             }
           };
 
+        console.log(data);
+
         fetch('/api/clientes/cliente', {
             method: 'POST',
             headers: {

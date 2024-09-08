@@ -5,6 +5,14 @@
         "destination": "http://3.142.35.243:8762/ms-planes/planes"
       },
       {
+        "source": "/api/clientes/cliente",
+        "destination": "http://3.142.35.243:8762/ms-clientes/clientes"
+      },
+      {
+        "source": "/api/usuarios/usuario",
+        "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios"
+      },
+      {
         "source": "/api/planes/(.*)",
         "destination": "http://3.142.35.243:8762/ms-planes/planes/$1"
       },
@@ -21,16 +29,12 @@
         "destination": "http://3.142.35.243:8762/ms-clientes/clientes/$1"
       },
       {
-        "source": "/api/clientes/cliente",
-        "destination": "http://3.142.35.243:8762/ms-clientes/clientes"
-      },
-      {
-        "source": "/api/usuarios/usuario",
-        "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios"
-      },
-      {
         "source": "/api/usuarios/cliente/(.*)",
         "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios/cliente/$1"
+      },
+      {
+        "source": "/api/pagos/pago",
+        "destination": "http://3.142.35.243:8762/ms-pagos/pagos"
       }
     ]
   }
