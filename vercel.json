@@ -29,7 +29,7 @@
         "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios"
       },
       {
-        "source": "/api/usuarios/cliente/${cliente.cedula}",
+        "source": "/api/usuarios/cliente/(.*)",
         "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios/cliente/$1"
       }
     ]
