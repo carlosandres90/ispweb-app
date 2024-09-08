@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import '../styles/crearplan.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
-
 function CrearPlan(){
     const [anchobanda, setAnchobanda] = useState('');
     const [precio, setPrecio] = useState('');
@@ -52,7 +50,7 @@ function CrearPlan(){
           };
 
 
-        fetch(`${apiUrl}/ms-planes/planes`, {
+        fetch('/api/planes/plan', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

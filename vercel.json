@@ -15,11 +15,22 @@
       {
         "source": "/api/usuarios/(.*)",
         "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios/$1"
-      }
-      ,
+      },
       {
         "source": "/api/clientes/(.*)",
         "destination": "http://3.142.35.243:8762/ms-clientes/clientes/$1"
+      },
+      {
+        "source": "/api/clientes/cliente",
+        "destination": "http://3.142.35.243:8762/ms-clientes/clientes"
+      },
+      {
+        "source": "/api/usuarios/usuario",
+        "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios"
+      },
+      {
+        "source": "/api/usuarios/cliente/${cliente.cedula}",
+        "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios/cliente/$1"
       }
     ]
   }

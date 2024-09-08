@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import '../styles/crearclientes.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
-
 function CrearClientes(){
     const [cedula, setCedula] = useState('');
     const [nombre, setNombre] = useState('');
@@ -80,7 +78,7 @@ function CrearClientes(){
             }
           };
 
-        fetch(`${apiUrl}/ms-clientes/clientes`, {
+        fetch('/api/clientes/cliente', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

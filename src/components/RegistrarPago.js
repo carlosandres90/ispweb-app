@@ -1,7 +1,7 @@
 import React, { useEffect, useState }from "react";
 import '../styles/registrarpago.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
+
 
 function RegistrarPago({ usuario }){
 
@@ -71,7 +71,7 @@ function RegistrarPago({ usuario }){
             }
           };
 
-        fetch(`${apiUrl}/ms-pagos/pagos`, {
+        fetch('/api/pagos/pago', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

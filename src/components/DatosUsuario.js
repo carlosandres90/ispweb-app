@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../styles/datosusuario.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
+
 
 function DatosUsuario({ cliente }) {
     const [codigo, setCodigo] = useState('');
@@ -61,7 +61,7 @@ function DatosUsuario({ cliente }) {
                     targetMethod: "GET",
                 };
 
-                const response = await fetch(`${apiUrl}/ms-planes/planes`, {
+                const response = await fetch(`/api/planes/plan`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ function DatosUsuario({ cliente }) {
             }
           };
 
-        fetch(`${apiUrl}/ms-usuarios/usuarios`, {
+        fetch('/api/usuarios/usuario', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/listausuarios.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
-
 const ListaUsuarios =  ({ cliente }) => {
     
     const[usuarios, setUsuarios] = useState([]);
@@ -20,7 +18,7 @@ const ListaUsuarios =  ({ cliente }) => {
                 const data1 = {
                     targetMethod: "GET",
                 };
-                const response = await fetch(`${apiUrl}/ms-usuarios/usuarios/cliente/${cliente.cedula}`, {
+                const response = await fetch(`/api/usuarios/cliente/${cliente.cedula}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

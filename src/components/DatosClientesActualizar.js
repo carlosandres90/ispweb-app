@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import '../styles/datosclientes.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
+
 
 
 const DatosClientesActualizar = ({ usuario }) => {
@@ -23,7 +23,7 @@ const DatosClientesActualizar = ({ usuario }) => {
                 };
 
                 // Realizar la consulta a la API usando la cédula
-                const response = await fetch(`${apiUrl}/ms-clientes/clientes/${usuario.cedula}`, {
+                const response = await fetch(`/api/clientes/${usuario.cedula}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

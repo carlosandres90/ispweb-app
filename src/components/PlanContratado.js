@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import '../styles/datosusuarioact.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
+
 
 function PlanContratado({ usuario }) {
     const [selectedPlan, setSelectedPlan] = useState(usuario.anchoBanda || '');
@@ -58,7 +58,7 @@ function PlanContratado({ usuario }) {
                     targetMethod: "GET",
                 };
 
-                const response = await fetch(`${apiUrl}/ms-planes/planes`, {
+                const response = await fetch('/api/planes/plan', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ function PlanContratado({ usuario }) {
                     direccion: limpiarEntrada(direccion)
                 }
             };
-            const response = await fetch(`${apiUrl}/ms-usuarios/usuarios/${usuario.codigo}`, {
+            const response = await fetch(`/api/usuarios/${usuario.codigo}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

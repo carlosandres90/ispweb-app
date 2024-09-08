@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../styles/datosclientes.css';
 
-const apiUrl = process.env.REACT_APP_API_URL
-
 const DatosClientes = ({ cliente }) => {
     
     const [direccion, setDireccion] = useState('');
@@ -66,7 +64,7 @@ const DatosClientes = ({ cliente }) => {
           };
     
         try {
-          const response = await fetch(`${apiUrl}/ms-clientes/clientes/${cliente.cedula}`, {
+          const response = await fetch(`/api/clientes/${cliente.cedula}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
