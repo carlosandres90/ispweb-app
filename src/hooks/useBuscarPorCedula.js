@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-const apiUrl = process.env.REACT_APP_API_URL
-
 export const useBuscarPorCedula = () => {
   const [cliente, setCliente] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -12,7 +10,7 @@ export const useBuscarPorCedula = () => {
     setError(null);
     try {
         
-      const response = await fetch(`${apiUrl}/ms-clientes/clientes/${cedula}`, {
+      const response = await fetch(`/api/clientes/${codigo}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -16,6 +16,11 @@
         "source": "/api/usuarios/(.*)",
         "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios/$1"
       }
+      ,
+      {
+        "source": "/api/clientes/(.*)",
+        "destination": "http://3.142.35.243:8762/ms-clientes/clientes/$1"
+      }
     ]
   }
   
