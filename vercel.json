@@ -11,6 +11,10 @@
       {
         "source": "/api/pagos/usuario/(.*)",
         "destination": "http://3.142.35.243:8762/ms-pagos/pagos/usuario/$1"
+      },
+      {
+        "source": "/api/usuario/(.*)",
+        "destination": "http://3.142.35.243:8762/ms-usuarios/usuarios/$1"
       }
     ]
   }

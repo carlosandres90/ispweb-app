@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-const apiUrl = process.env.REACT_APP_API_URL
-
 export const useBuscarPorUsuario = () => {
   const [usuario, setUsuario] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -16,7 +14,7 @@ export const useBuscarPorUsuario = () => {
         targetMethod: "GET",
       };
 
-      const response = await fetch(`${apiUrl}/ms-usuarios/usuarios/${codigo}`, {
+      const response = await fetch(`/api/usuarios/${codigo}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
