@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../styles/actualizarplan.css';
 
-//const apiUrl = process.env.REACT_APP_API_URL
 
 function ActualizarPlan() {
     const [planes, setPlanes] = useState([]); // Estado para almacenar los planes obtenidos
