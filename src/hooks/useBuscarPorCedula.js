@@ -10,7 +10,7 @@ export const useBuscarPorCedula = () => {
     setError(null);
     try {
         
-      const response = await fetch(`/api/clientes/${codigo}`, {
+      const response = await fetch(`/api/clientes/${cedula}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
