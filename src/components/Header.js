@@ -19,7 +19,7 @@ const Header = () => {
                             ISPWEB
                         </li>
                         <li>
-                            <Link to={`/`}>
+                            <Link to={`/principal`}>
                                 INICIO
                             </Link>
                         </li>

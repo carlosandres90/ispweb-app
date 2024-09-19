@@ -9,12 +9,14 @@ import { PlanCrear } from "../views/PlanCrear";
 import { PagoRegistrar } from "../views/PagoRegistrar";
 import { PagosConsultar } from "../views/PagosConsultar";
 import { PlanActualizar } from "../views/PlanActualizar";
+import { Inicio } from "../views/Inicio";
 
 export const AppRoutes = () => {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Principal />}/>
+                <Route path="/" element={<Inicio />}/>
+                <Route path="/principal" element={<Principal />}/>
                 <Route path="/clientes-crear" element={<ClientesCrear />}/>
                 <Route path="/clientes-consultar" element={<ClientesConsultar />}/>
                 <Route path="/usuarios-crear" element={<UsuariosCrear />}/>
